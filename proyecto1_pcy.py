@@ -33,8 +33,33 @@ ENTRADAS:
                   precio_venta
                   ganancia_neta = ingresos_totales - costos_totales
 
-    3 - Mostrar Resultados
-    ...
+    3. -Mostrar Resultados
+        print(f"Oveja: {nombre_oveja}) (Edad: {edad_oveja} años)")
+        print(f"Producción analizando: {años_produccion} años")
+        print(f"Partos Totales en el tiempo: {total_partos} años")
+        print(f"Crias  Totales producidas: {total_crias}")
+        print("---")
+        print(f"Inversión Total en crianza: $ {costos_totales: .2f}")
+        print(f"Ingresos por venta: $ {ingresos_totales: .2f}")
+        print(f"Ganaancia NETA: $ {ganancia_neta: .2f}")
+        print("---")
+    
+    4. -Evaluar Rentabilidad
+        if ganancia_neta > 0:
+           print(" NEGOCIO RENTABLE - RECOMENDADO")
+        elif ganancia_neta == 0:
+           print(" NEGOCIO EQUILIBRADO - SIN GANANCIAS NI PÉRDIDAS")
+        else:
+           print("NEGOCIO NO RENTABLE - REVISAR CALCULOS)
+
+    5. -CALCULOS
+        total_crias = total_partos * críaa_por_parto
+        print(f"Crías totales ({total_crias}) * Costo/cría ($ {costo_cria}) = $
+        {costos_totales_cria:,.2f} en crianza")
+
+        ingresos_totales = total_crias * precio_venta
+        print(f"crias totales ({total_crias}) * Precio venta ($ {precio_venta}) = $
+        {ingresos_totales:,.2f} ingresos totales")
 
 
 """

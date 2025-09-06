@@ -1,7 +1,8 @@
 #Aqui se ira haciendo el desarrollo para el proyecto para mejorar un negocio ovinocultor
 
 """
-ALGORITMO
+
+#ALGORITMO
 
 ENTRADAS:
     1. - Solicitar datos al usuario
@@ -50,16 +51,62 @@ ENTRADAS:
         elif ganancia_neta == 0:
            print(" NEGOCIO EQUILIBRADO - SIN GANANCIAS NI PÉRDIDAS")
         else:
-           print("NEGOCIO NO RENTABLE - REVISAR CALCULOS)
+           print("NEGOCIO NO RENTABLE - REVISAR CALCULOS")
 
     5. -CALCULOS
-        total_crias = total_partos * críaa_por_parto
+        total_crias = total_partos * crías_por_parto
         print(f"Crías totales ({total_crias}) * Costo/cría ($ {costo_cria}) = $
         {costos_totales_cria:,.2f} en crianza")
 
         ingresos_totales = total_crias * precio_venta
         print(f"crias totales ({total_crias}) * Precio venta ($ {precio_venta}) = $
         {ingresos_totales:,.2f} ingresos totales")
+
+    6. -FUNCIONES
+        def pedir_datos_oveja():
+            nombre = input("Arete oveja: ")
+            edad = int(input("Edad de la oveja (años): "))
+            return nombre, edad
+
+        def pedir_datos_reproductivos():
+            crías_por_parto = input("Numero de corderos por parto: ")
+            partos_por_año = int(input("Partos por año: "))
+            años_producción = int(input("Años para producir: "))
+            return crías_por_parto, partos_por_año, años_producción
+
+        def pedir_datos_economicos():
+            costo_oveja = float(input("Costo oveja: "))
+            costo_cria = float(input("Costo crianza corderos: "))
+            precio_venta = float(input("Precio de ventas por cordero: "))
+            return costo_oveja, costo_cria, precio_venta
+
+        def calcular_produccion(partos_por_año, años, crias_por_parto):
+            total_partos = partos_por_año * años
+            total_crias = total_partos * crias_por_parto
+            return total_partos, total_crias
+
+        def calcular_economia (total_crias, costo_cria, precio_venta)
+            costos = total_crias * costo_cria
+            ingresos = total_crias * precio_venta
+            ganancia = ingresos - costos
+            return costos, ingresos, ganancias
+
+        def mostrar_resultados (nombre, edad, años, total_partos, total_de_crias, costos, ingresos, ganancias)
+            print(" --- RESULTADOS_DEL_ ANALISIS --- ")
+            print(f"oveja: {nombre}, edad: {edad} años")
+            print(f"partos totales: {total_partos}")
+            print(f"crias totales: {total_crias}")
+            print(f"Inversion total de crianza: ${costos: .2f}")
+            print(f"Ingresos totales por venta: ${ingresos: .2f}")
+            print(f"Ganacia total: ${ganancia: .2f}")
+
+            if ganancia > 0:
+               print(" NEGOCIO RENTABLE - MUY BUENO ")
+            elif ganancia == 0:
+               print(" Negocio Sin Ganancias - Ni perdidas ")
+            else:
+               print(" NEGOCIO NO RENTABLE - REVISAR ")
+
 
 
 """

@@ -6,6 +6,10 @@
 
 #ENTRADAS:
 
+# Iniciamos las listas para guardar borregas
+ovejas = []          # Lista principal para guardar datos de cada borrega
+ganancias = []       # Lista para registrar las ganancias de cada borrega
+
 c = ("Si")
 
 while c == "Si":
@@ -158,5 +162,20 @@ while c == "Si":
         print("LA CALIDAD ES MUY MALA - Muy pocas crías sobreviven.")
 
 
-        
+
     c = str(input("Desea continuar con la siguiente borrega? (Si / No): "))
+
+    print(f"Lista de ovejas registradas hasta ahora: {ovejas}")
+
+    # 8. - Guardar en listas
+    ovejas.append(nombre_oveja)       # Sirve para guardar el nombre en la lista
+    ganancias.append(ganancia_neta)   # Sirve para guardar la ganancia en la otra lista
+
+    # Ahora damos la opción al usuario para revisar las borregas registradas
+    op = "Si"
+    while op == "Si":
+        print("\n--- RESUMEN DE OVEJAS REGISTRADAS ---")
+        for i in range(len(ovejas)):
+            print(f"{i+1} Oveja: {ovejas[i]} | Ganancia neta: ${ganancias[i]:.2f}")
+        op = input("¿Desea volver a ver el resumen? (Si / No): ")
+
